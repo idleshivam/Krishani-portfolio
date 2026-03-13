@@ -1,5 +1,5 @@
 /* ── RESET & BASE ────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
   --c-bg:        #f8f7ff;
@@ -31,6 +31,10 @@
 
 html { scroll-behavior: smooth; }
 
+html, body { 
+  cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 3L18.5 13L12 14.5L9 22L5.5 3Z" fill="%23111111" stroke="white" stroke-width="1.5"/></svg>'), auto; 
+}
+
 body {
   font-family: var(--font-body);
   background: var(--c-bg);
@@ -39,41 +43,12 @@ body {
   overflow-x: hidden;
 }
 
-a { text-decoration: none; color: inherit; cursor: none; }
+a, button, .btn { 
+  cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 11.5V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V11.5M10 21H14C17.7712 21 19.6569 21 20.8284 19.8284C22 18.6569 22 16.7712 22 13V12.5C22 11.6716 21.3284 11 20.5 11C19.6716 11 19 11.6716 19 12.5V13M9 11.5V13C9 14.6569 7.65685 16 6 16C4.34315 16 3 14.6569 3 13V12.5C3 11.6716 3.67157 11 4.5 11C5.32843 11 6 11.6716 6 12.5V13H9ZM9 11.5V17M15 11.5V17M12 14.5V21" stroke="%23111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'), pointer; 
+}
+
+a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
-
-/* ── CUSTOM CURSOR ──────────────────────────────── */
-.cursor-dot,
-.cursor-outline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: 9999;
-  pointer-events: none;
-}
-
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #000;
-}
-
-.cursor-outline {
-  width: 40px;
-  height: 40px;
-  border: 1.5px solid rgba(0, 0, 0, 0.4);
-  transition: width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
-}
-
-/* Hover state for links/buttons */
-.cursor-hover {
-  width: 60px;
-  height: 60px;
-  background-color: rgba(0, 0, 0, 0.05); /* Very slight dark background */
-  border-color: rgba(0, 0, 0, 0.1);    /* Fainter border */
-}
 
 /* ── TYPOGRAPHY ─────────────────────────────────── */
 .gradient-text {
